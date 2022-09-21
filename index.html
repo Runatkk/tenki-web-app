@@ -1,0 +1,183 @@
+﻿<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>天気</title>
+
+    <!-- Font Icon の読み込み -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css" />
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/weather.css" />
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="align">
+            <div class="app">
+                <div id="main">
+                    <!-- Settings Menu -->
+                    <div id="introscreen">
+                        <p>loading...</p>
+                    </div>
+
+                    <!---- Settings Button -->
+                    <span id="btn-right">
+                        <i class="fas fa-search" id="btn-right-i" aria-hidden="true"></i>
+                    </span>
+                    <!----End Settings Button -->
+                    <!-- Info Message-->
+                    <div id="info-msg">
+                        <div class="msg-box">
+                            <h1></h1>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!--End Info Message-->
+
+                    <div id="settings" class="">
+
+                        <div class="search-container">
+                            <label>
+                                <input type="text" id="search" placeholder="都市名（日本語）" required />
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <button type="button" id="update-button" placeholder="Update">調べ</button>
+                            </label>
+                        </div>
+
+
+                    </div>
+                    <!-- End Settings Menu  -->
+
+                    <div id="central" class="">
+                        <div id="top-menu-info">
+                            <p id="location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>日本</span>
+                            </p>
+                        </div>
+
+                        <div id="temp-div">
+                            <div id="icon-temp">
+                                <i class="wi wi-day-cloudy" aria-hidden="true"></i>
+                                <p>N/A</p>
+                            </div>
+                            <p id="current-temp-big">
+                                <span id="ctb">0</span>
+                                <span id="ctbicon">°C</span>
+                            </p>
+                        </div>
+
+                        <div id="weather-menu">
+                            <span href="#" id="weather-menu-btn">
+                                <i class="fas fa-chevron-up" aria-hidden="true"></i>
+                            </span>
+
+                            <ul>
+                                <li id="atmli">
+                                    <p class="li_title">指数情報</p>
+                                    <div id="humidity" class="col-1">
+                                        <i class="wi wi-humidity" aria-hidden="true"></i>
+                                        <span>湿度 <br> <span id="hd">NaN</span></span>
+                                    </div>
+                                    <div id="precipitation" class="col-2">
+                                        <i class="wi wi-raindrop" aria-hidden="true"></i>
+                                        <span>降水 <br> <span id="pd">NaN</span></span>
+                                    </div>
+                                    <div id="uv" class="col-3">
+                                        <i class="wi wi-hot" aria-hidden="true"></i>
+                                        <span>紫外線 <br> <span id="vd">NaN</span></span>
+                                    </div>
+                                    <p style="height: 20px;"></p>
+                                    <div id="wind" class="col-1">
+                                        <i class="wi wi-strong-wind" aria-hidden="true"></i>
+                                        <span><span id="sd1">風</span><span id="sd">NaN</span></span>
+                                    </div>
+                                    <div id="umbrella" class="col-2">
+                                        <i class="wi wi-umbrella" aria-hidden="true"></i>
+                                        <span><span id="cd">NaN</span></span>
+                                    </div>
+                                    <div id="clothing" class="col-3">
+                                        <i class="fas fa-tshirt" aria-hidden="true" style="font-size: 26px;"></i>
+                                        <span><span id="dd">NaN</span></span>
+                                    </div>
+                                </li>
+                                <li id="forecastli">
+                                    <p class="li_title">本日の天気</p>
+                                    <span class="day_left">
+                                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="day_right">
+                                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="li_row">
+
+                                        <div class="col-1 hour24item">
+                                            <i class="wi wi-day-sunny" aria-hidden="true"></i>
+                                            <span>0時 <br> 20°C</span>
+                                        </div>
+                                        <div class="col-2 hour24item">
+                                            <i class="wi wi-day-cloudy" aria-hidden="true"></i>
+                                            <span>3時 <br> 22°C</span>
+                                        </div>
+                                        <div class="col-3 hour24item">
+                                            <i class="wi wi-day-rain" aria-hidden="true"></i>
+                                            <span>6時 <br> 15°C</span>
+                                        </div>
+
+                                        <div class="col-1 hour24item">
+                                            <i class="wi wi-day-sunny" aria-hidden="true"></i>
+                                            <span>9時 <br> 20°C</span>
+                                        </div>
+                                        <div class="col-2 hour24item">
+                                            <i class="wi wi-day-cloudy" aria-hidden="true"></i>
+                                            <span>12時 <br> 22°C</span>
+                                        </div>
+                                        <div class="col-3 hour24item">
+                                            <i class="wi wi-day-rain" aria-hidden="true"></i>
+                                            <span>15時 <br> 15°C</span>
+                                        </div>
+
+                                        <div class="col-1 hour24item">
+                                            <i class="wi wi-day-sunny" aria-hidden="true"></i>
+                                            <span>18時 <br> 20°C</span>
+                                        </div>
+                                        <div class="col-2 hour24item">
+                                            <i class="wi wi-day-cloudy" aria-hidden="true"></i>
+                                            <span>21時 <br> 22°C</span>
+                                        </div>
+                                        <div class="col-3">
+
+                                        </div>
+                                    </div>
+
+                                    <div id="dotmenu">
+                                        <span class="currentday"></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- jQuery読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- JS読み込み -->
+    <script src="./js/weather.js"></script>
+
+</body>
+
+</html>
